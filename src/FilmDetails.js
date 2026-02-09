@@ -18,7 +18,10 @@ function FilmDetails(){
 
     return <div style={{ padding: "20px" }}>
         <h2>{film.title} </h2>
-        <p>Genre: {film.category}</p>
+        <p>Genre: {film.genre}</p>
+        <p>Rating: {film.rating}</p>
+        <p>Desription: {film.description}</p>
+        <p>Release Year: {film.release_year}</p>
         <p>Rentals: {film.rented}</p>
     <nav>
               <Link to="/">Back to Home</Link>
