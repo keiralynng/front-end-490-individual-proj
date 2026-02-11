@@ -21,3 +21,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ignore backend repo if it ever appears here
+backend/
+
+# python stuff just in case
+__pycache__/
+venv/
+
+# env files
+.env
+
