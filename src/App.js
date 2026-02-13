@@ -4,6 +4,9 @@ import FilmDetails from "./FilmDetails";
 import ActorDetails from "./ActorDetails"; 
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react"; 
+import "./App.css"; 
+import "./FilmCard.css"; 
+import "./ActorCard.css"; 
  
 function Landing(){
   const [films, setFilms] = useState([]);
@@ -20,34 +23,36 @@ function Landing(){
   }, []); 
 
   return(
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h2>Top 5 Rented Films</h2>
+    <div>
+    <div className="h1">
+      Top 5 Rented Films
+      </div>
 
+    <div className="card-row">
       {films.map(film => (
         <FilmCard key={film.film_id} film={film}/>
       ))}
-    
-      <h2>Top 5 Actors</h2>
-     
+    </div>
+
+      <div className="h1">
+      Top 5 Actors
+     </div>
+
+     <div className="card-row">
       {actors.map(actor =>(
         <ActorCard key={actors.actor_id} actor={actor}/>
         ))}
-
-    </div>
+      </div>
+      </div>
   ); 
 }
 
 function App(){
   return(
     <div>
-    <div style={{ 
-      backgroundColor: "black", 
-      color: "white",
-      padding: "15px", 
-      fontSize: "20px",
-      fontWeight: "bold"
-    }}>
-      Movie Store Dashboard 
+    <div className="body">
+    <div className="header">
+      Sakila Movies 
     </div>
 
     <Routes>
@@ -55,6 +60,7 @@ function App(){
       <Route path="/films/:film_id" element={<FilmDetails />}/>
       <Route path="/actors/:actor_id" element={<ActorDetails />}/>
     </Routes>
+        </div>
     </div>
   ); 
 }

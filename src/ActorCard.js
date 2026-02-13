@@ -1,26 +1,19 @@
 import { Link } from "react-router-dom"; 
+import "./ActorCard.css"; 
 
 function ActorCard({ actor }) {
   return (
-    <div 
-            style={{
-                backgroundColor: "black",
-                color: "white",
-                padding: "10px",
-                fontSize: "20px", 
-                fontWeight: "bold",
-                borderRadius: "8px", 
-                width: "160px",
-                margin: "10px auto"
-            }}
-            > 
+    <div className="actor-style"> 
+    <div className="name-title"> 
             {actor.name}
-            <p style ={{ fontSize: "14px", fontWeight: "normal"}}> 
+    </div>
+    <div className="movie-count">
+            <p> 
               Movies: {actor.movies}
-
             </p>
+    </div>
             <nav>
-              <Link to={`/actors/${actor.actor_id}`}>
+              <Link className="link-text" to={`/actors/${actor.actor_id}`}>
               View Details
               </Link>
             </nav>

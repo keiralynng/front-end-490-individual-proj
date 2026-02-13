@@ -1,0 +1,53 @@
+.card-row{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: auto; 
+  padding: 10px;
+}
+
+.card-style{
+    background-color: #141414;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px; 
+    width: 200px;
+    margin: 10px;
+
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6); 
+}
+
+.film-title{
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center; 
+    color: white;
+}
+
+.film-genre{
+    color: white; 
+    font-size: 15px;
+    text-align: center; 
+    font-weight: normal;   
+}
+
+nav{
+    text-align: center;
+}
+
+.link-text {
+  color: pink;
+  font-size: 12px;
+  text-decoration: none;
+  background: rgb(55, 57, 162);
+
+}
+.card-style .link-text:hover{
+  color: rgb(245, 163, 177); 
+  border: 1px white; 
+}
+.link-text:visited{
+    color:pink 
+}

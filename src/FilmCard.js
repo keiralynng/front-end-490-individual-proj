@@ -1,30 +1,26 @@
 import { Link } from "react-router-dom"; 
+import "./FilmCard.css";
 
 function FilmCard({ film }) {
   return (
-    <div 
-            style={{
-                backgroundColor: "black",
-                color: "white",
-                padding: "10px",
-                fontSize: "20px", 
-                fontWeight: "bold",
-                borderRadius: "8px", 
-                width: "160px",
-                margin: "10px auto"
-            }}
-            > 
-            {film.title}
-            <p style={{ fontSize: "14px", fontWeight: "normal"}}>
-              Genre: {film.category}
-            </p>
+    <div className="shadow">
+    <div className="card-style">
 
-            <nav>
-              <Link to={`/films/${film.film_id}`}>
+    <div className="film-title">
+            {film.title}
+    </div>
+
+        <div className="film-genre">
+            <p>Genre: {film.category}
+              </p>
+        </div>
+              <nav>
+              <Link className="link-text" to={`/films/${film.film_id}`}>
               View Details
               </Link> 
               </nav>
-              </div> 
+      </div>
+    </div>
   );
 }
 
