@@ -13,7 +13,7 @@ function ActorCard({ actor }) {
             </p>
     </div>
             <nav>
-              <Link className="link-text" to={`/actors/${actor.actor_id}`}>
+              <Link className="actor-link" to={`/actors/${actor.actor_id}`}>
               View Details
               </Link>
             </nav>

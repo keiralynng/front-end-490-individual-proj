@@ -2,17 +2,19 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
-  overflow-x: auto; 
   padding: 10px;
+  overflow-x: wrap;
 }
 
 .actor-style{
-    background-color: #141414;
+    background-color: white;
     color: rgb(0, 0, 0);
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 8px; 
+    border-radius: 15px; 
+    border-style: solid;
+    border-color: rgba(124, 124, 233, 0.573);
     width: 200px;
     margin: 10px;
 
@@ -21,14 +23,14 @@
 }
 
 .name-title{
-    color: white;
+    color: black;
     font-size: 21px;
     font-weight: bold;
     text-align: center; 
 }
 
 .movie-count{
-    color: white; 
+    color: black; 
     font-size: 15px;
     text-align: center; 
     font-weight: normal;   
@@ -38,13 +40,21 @@ nav{
     text-align: center;
 }
 
-.link-text {
-  color: pink;
-  font-size: 12px; 
+.actor-link {
+  font-size: 10px;
+  text-decoration: none;
+  background: rgba(137, 169, 237, 0.169);
+  padding: 3px 8px; 
+  border-radius: 5px;  
 }
-.actor-style .link-text:hover{
-  color: rgb(245, 163, 177); 
+.actor-link:hover{
+  color: black; 
+  font-size: 10px;
+  text-decoration: none;
+  background: white;
+  padding: 6px 10px;
 }
-.link-text:visited{
-    color:pink 
+
+.actor-link:visited{
+  color: rgb(135, 205, 246);
 }

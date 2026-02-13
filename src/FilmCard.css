@@ -2,19 +2,21 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
-  overflow-x: auto; 
   padding: 10px;
+  overflow-x: wrap; 
 }
 
 .card-style{
-    background-color: #141414;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 8px; 
+    border-radius: 15px; 
+    border-style: solid; 
+    border-color: rgba(124, 124, 233, 0.573);
     width: 200px;
-    margin: 10px;
+    margin: 10px; 
 
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6); 
 }
@@ -23,11 +25,11 @@
     font-size: 21px;
     font-weight: bold;
     text-align: center; 
-    color: white;
+    color: black;
 }
 
 .film-genre{
-    color: white; 
+    color: rgb(0, 0, 0); 
     font-size: 15px;
     text-align: center; 
     font-weight: normal;   
@@ -37,17 +39,22 @@ nav{
     text-align: center;
 }
 
-.link-text {
-  color: pink;
-  font-size: 12px;
+.card-style .film-link {
+  font-size: 10px;
+  color: black;
   text-decoration: none;
-  background: rgb(55, 57, 162);
+  background: rgba(137, 169, 237, 0.169);
+  padding: 3px 8px; 
+  border-radius: 5px; 
+}
+.card-style .film-link:hover{
+  color: rgb(135, 205, 246); 
+  font-size: 10px;
+  text-decoration: none;
+  background: white;
+  padding: 6px 10px; 
+} 
 
-}
-.card-style .link-text:hover{
-  color: rgb(245, 163, 177); 
-  border: 1px white; 
-}
-.link-text:visited{
-    color:pink 
+.film-link:visited{
+    color: rgb(135, 205, 246); 
 }

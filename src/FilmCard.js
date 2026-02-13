@@ -3,7 +3,6 @@ import "./FilmCard.css";
 
 function FilmCard({ film }) {
   return (
-    <div className="shadow">
     <div className="card-style">
 
     <div className="film-title">
@@ -15,12 +14,11 @@ function FilmCard({ film }) {
               </p>
         </div>
               <nav>
-              <Link className="link-text" to={`/films/${film.film_id}`}>
+              <Link className="film-link" to={`/films/${film.film_id}`}>
               View Details
               </Link> 
               </nav>
       </div>
-    </div>
   );
 }
 
