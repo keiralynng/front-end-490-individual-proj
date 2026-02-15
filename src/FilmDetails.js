@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom"; 
 import { useEffect, useState } from "react"; 
+import "./FilmDetails.css"; 
 
 function FilmDetails(){
     const {film_id } = useParams();
@@ -16,17 +17,26 @@ function FilmDetails(){
         return <div style={{ padding: "20px" }}>Loading.</div>
     }
 
-    return <div style={{ padding: "20px" }}>
-        <h2>{film.title} </h2>
-        <p>Genre: {film.genre}</p>
-        <p>Rating: {film.rating}</p>
-        <p>Desription: {film.description}</p>
-        <p>Release Year: {film.release_year}</p>
-        <p>Rentals: {film.rented}</p>
+    return (
+    <>
+    <div className="title-header">
+        {film.title} </div>
+
+        <div className="text-spacing">
+        <div className="text">
+        <div><span className="detail-label">Genre: </span> {film.genre}</div>
+        <div><span className="detail-label">Rating: </span> {film.rating}</div>
+        <div><span className="detail-label">Description: </span> {film.description}</div>
+        <div><span className="detail-label">Release Year: </span> {film.release_year}</div>
+        <div><span className="detail-label">Rentals: </span> {film.rented}</div>
+        </div>
+        </div>
+
     <nav>
-              <Link to="/">Back to Home</Link>
+              <Link className="details-link" to="/">Back to Home</Link>
             </nav>
-    </div>
+            </>
+);
 }
 
 export default FilmDetails;

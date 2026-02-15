@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"; 
 import { useEffect, useState } from "react"; 
 import { useParams } from "react-router-dom";
+import "./ActorDetails.css"; 
  
 function ActorDetails(){
     const {actor_id } = useParams();
@@ -20,24 +21,36 @@ function ActorDetails(){
     const topFilms = data.top_films || []; 
 
     return( 
-    <div style={{ padding: "20px" }}>
-        <h2>{actor.first_name} {actor.last_name}</h2>
-        <h3>Top 5 Rented Films</h3>
+    <>
+    <div className="actor-name">
+        {actor.first_name} {actor.last_name}
+        </div> 
+
+        <div className="movie">Top 5 Rented Films</div>
 
         {topFilms.length === 0 ? (
             <p>No films found.</p>
         ) : (
-            <ul>{topFilms.map((film) => (
-                <li key={film.film_id}>
-                    {film.title} - Rentals: {film.rented}
-                </li>
+            <div className="actor-text">
+                <div className="actor-spacing">
+                {topFilms.map((film) => (
+                <div className="film-block" key={film.film_id}>
+                    <div className="detail-label">
+                    {film.title}</div> 
+
+                    <div className="rentals">
+                     <span className="detail-label">Rentals: </span>
+                     <span>{film.rented}</span>
+                </div>
+                </div>
             ))}
-            </ul>
+            </div>
+            </div>
         )}
     <nav>
-              <Link to="/">Back to Home</Link>
+              <Link className="details-link" to="/">Back to Home</Link>
             </nav>
-    </div>
+    </>
     )
 }
 

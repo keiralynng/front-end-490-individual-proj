@@ -1,0 +1,65 @@
+.actor-name{
+    color: #d1d6e0;
+    font-size: 30px;
+    font-weight: bold; 
+    text-align: center;
+    margin-top: 25px; 
+}
+
+.movie{
+    color: #d1d6e0; 
+    font-size: 25px; 
+    font-weight: bold; 
+    text-align: center; 
+    margin-top: 25px;
+}
+
+.detail-label{
+    font-weight: bold; 
+    font-style: normal;
+}
+
+.actor-text{
+    color: #d1d6e0; 
+    font-size: 18px; 
+    text-align: center; 
+    padding: 10px; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    font-style: italic; 
+}
+
+.actor-spacing{
+   padding: 65px;
+}
+
+.film-block{
+    margin-bottom: 10px; 
+}
+
+.rentals{
+    margin-top: 4px; 
+}
+
+.details-link {
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  background: rgba(69, 99, 163, 0.639);
+  padding: 3px 8px; 
+  border-radius: 5px; 
+}
+.details-link:hover{
+  color: white; 
+  font-size: 12px;
+  text-decoration: none;
+  padding: 5px 9px; 
+} 
+
+.details-link:active{
+   padding: 4px 7px;
+}
+
+.details-link:visited{
+    color: white; 
+}
