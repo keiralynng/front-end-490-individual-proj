@@ -1,12 +1,14 @@
 import FilmCard from "./FilmCard"; 
 import ActorCard from "./ActorCard"; 
 import FilmDetails from "./FilmDetails"; 
-import ActorDetails from "./ActorDetails"; 
+import ActorDetails from "./ActorDetails";
+import FilmsPage from "./FilmsPage";
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react"; 
 import "./App.css"; 
 import "./FilmCard.css"; 
 import "./ActorCard.css"; 
+import Footer from "./Footer"
  
 function Landing(){
   const [films, setFilms] = useState([]);
@@ -43,6 +45,7 @@ function Landing(){
         <ActorCard key={actors.actor_id} actor={actor}/>
         ))}
       </div>
+      <Footer />
       </div>
   ); 
 }
@@ -57,6 +60,7 @@ function App(){
 
     <Routes>
       <Route path="/" element = {<Landing />}/>
+      <Route path="/films" element = {<FilmsPage />}/>
       <Route path="/films/:film_id" element={<FilmDetails />}/>
       <Route path="/actors/:actor_id" element={<ActorDetails />}/>
     </Routes>
