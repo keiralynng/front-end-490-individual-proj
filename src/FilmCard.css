@@ -7,7 +7,7 @@
 }
 
 .card-style{
-    background-color: #ffffff;
+    background-color: #e9ecf2;
     color: rgb(0, 0, 0);
     padding: 10px;
     font-size: 20px;
@@ -19,9 +19,19 @@
     margin: 10px; 
 
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;  
+
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+}
+
+.card-style:hover{
+    transform: translateY(-5px); 
 }
 
 .film-title{
+    margin-top: 4px;
     font-size: 21px;
     font-weight: bold;
     text-align: center; 
@@ -31,8 +41,13 @@
 .film-genre{
     color: rgb(0, 0, 0); 
     font-size: 15px;
+    font-weight: normal;  
     text-align: center; 
-    font-weight: normal;   
+    margin-top: 6px;
+}
+
+.film-genre p{
+    margin: 0;
 }
 
 nav{
@@ -41,20 +56,23 @@ nav{
 
 .card-style .film-link {
   font-size: 10px;
-  color: black;
+  color: white;
   text-decoration: none;
-  background: rgba(137, 169, 237, 0.169);
+  background: rgba(69, 99, 163, 0.639);
   padding: 3px 8px; 
   border-radius: 5px; 
 }
 .card-style .film-link:hover{
-  color: rgb(135, 205, 246); 
+  color: white; 
   font-size: 10px;
   text-decoration: none;
-  background: white;
-  padding: 6px 10px; 
+  padding: 5px 9px; 
 } 
 
+.card-style .film-link:active{
+   padding: 4px 7px;
+}
+
 .film-link:visited{
-    color: rgb(135, 205, 246); 
+    color: white; 
 }
