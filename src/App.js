@@ -3,6 +3,7 @@ import ActorCard from "./ActorCard";
 import FilmDetails from "./FilmDetails"; 
 import ActorDetails from "./ActorDetails";
 import FilmsPage from "./FilmsPage";
+import CustomersPage from "./CustomersPage"; 
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react"; 
 import "./App.css"; 
@@ -61,6 +62,7 @@ function App(){
     <Routes>
       <Route path="/" element = {<Landing />}/>
       <Route path="/films" element = {<FilmsPage />}/>
+      <Route path="/customers" element = {<CustomersPage />}/>
       <Route path="/films/:film_id" element={<FilmDetails />}/>
       <Route path="/actors/:actor_id" element={<ActorDetails />}/>
     </Routes>

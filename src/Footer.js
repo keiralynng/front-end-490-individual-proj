@@ -11,8 +11,8 @@ export default function Footer() {
         </span>
 
         <nav className="footer-right">
-            <Link to="/actors" style={{color: "white", TextDecoration: "none"}}>
-            Actors
+            <Link to="/customers" style={{color: "white", TextDecoration: "none"}}>
+            Customers
             </Link>
         </nav>
         </footer>
