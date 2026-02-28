@@ -60,19 +60,20 @@ function CustomerDetails(){
 
     return (
     <div> 
-        <h1> 
+        <div className="name-header"> 
             {customer.first_name} {customer.last_name}
-        </h1>
-        <p>{customer.email}</p>
+        </div>
+        <div className="email">{customer.email}</div>
 
-        <button onClick={deleteCustomer}>Delete Customer</button>
-
-        <h2>Rental History</h2>
+        <div className="button-container">
+        <button className="delete-button" onClick={deleteCustomer}>Delete Customer</button>
+        </div>
+        <div className="rental-history">Rental History</div>
         {rentals.length === 0 ? (
             <p>No rentals found.</p>
         ) : ( 
             rentals.map((r) => (
-                <div key={r.rental_id}>
+                <div className="actual-rentals" key={r.rental_id}>
                     {r.title} - {r.return_date ? "Returned" : "OUT"}
 
                     {!r.return_date && (

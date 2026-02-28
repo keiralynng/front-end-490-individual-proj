@@ -6,3 +6,11 @@ font-size: 12px;
   padding: 3px 8px; 
   border-radius: 5px; 
 }
+
+.customer-header{
+  font-size: 30px; 
+  color: #d1d6e0; 
+  font-weight: bold; 
+  text-align: center;
+  margin-top: 25px
+}

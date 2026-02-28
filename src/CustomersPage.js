@@ -14,7 +14,7 @@ function CustomersPage(){
 
     return ( 
         <div> 
-            <h1>Customer List</h1>
+            <div className="customer-header">Customer List</div>
     {
         customers.map((customer) => (
             <div key = {customer.customer_id}> 
