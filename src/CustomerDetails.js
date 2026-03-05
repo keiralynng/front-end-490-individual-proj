@@ -1,6 +1,7 @@
 import { Link, useParams, useNavigate} from "react-router-dom"; 
 import { useEffect, useState } from "react"; 
 import "./CustomerDetails.css"; 
+import EditCustomerModal from "./EditCustomerModal"
 
 function CustomerDetails(){
     const {customer_id } = useParams();
@@ -8,7 +9,23 @@ function CustomerDetails(){
 
     const [customer, setCustomer] = useState(null);
     const [rentals, setRentals] = useState([]); 
-
+    const [edit, setEdit] = useState(false);
+    
+    
+    //saves edits from modal and edits the db
+    function editCustomer(updatedCustomer) {
+        fetch(`http://localhost:5000/api/customers/${updatedCustomer.customer_id}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(updatedCustomer)
+        })
+        .then(res => res.json())
+        .then(() => {setCustomer(updatedCustomer)
+            loadCustomer();
+            setEdit(false);
+        })
+            
+    }
     // fetches details again
     const loadCustomer = () => {
         fetch(`http://localhost:5000/api/customers/${customer_id}`)
@@ -64,13 +81,15 @@ function CustomerDetails(){
             {customer.first_name} {customer.last_name}
         </div>
         <div className="email">{customer.email}</div>
+        <div className="email">Id: {customer.customer_id}</div>
 
         <div className="button-container">
         <button className="delete-button" onClick={deleteCustomer}>Delete Customer</button>
+        <button className="delete-button" onClick={() => setEdit(true)}>Edit Customer</button>
         </div>
         <div className="rental-history">Rental History</div>
         {rentals.length === 0 ? (
-            <p>No rentals found.</p>
+            <p style={{ color: "white", textAlign: "center" }}><strong>No rentals found.</strong></p>
         ) : ( 
             rentals.map((r) => (
                 <div className="actual-rentals" key={r.rental_id}>
@@ -92,6 +111,13 @@ function CustomerDetails(){
             {" | "}
             <Link className="details-link" to="/">Back to Home</Link>
         </nav>
+
+        {edit && ( <EditCustomerModal
+            customer={customer}
+            onClose={() => setEdit(false)}
+            onSave={editCustomer}>
+            </EditCustomerModal>
+        )}
         </div>
 );
 }
